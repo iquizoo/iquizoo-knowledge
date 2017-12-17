@@ -1,0 +1,13 @@
+---
+title: "神经解剖知识点"
+author: "张亮"
+date: "2017年12月13日"
+output: html_document
+---
+
+# 基本知识点
+
+```{r knowledge path, echo = FALSE, fig.cap = "神经解剖基础"}
+DiagrammeR::grViz("神经解剖.gv")
+```
+

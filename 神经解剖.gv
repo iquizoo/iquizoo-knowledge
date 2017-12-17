@@ -1,0 +1,26 @@
+digraph anatomy {
+
+  # node defiitions
+  node [fontname = 'SimHei']
+  {rank = same; Anatomy [label = '@@1'];}
+  {rank = same; Gross [label = '@@2-1']; Fine [label = '@@2-2'];}
+  {rank = same; CNS [label = '@@3-1']; PNS [label = '@@3-2']; Neuron [label = '@@3-3']; Glial [label = '@@3-4'];}
+  {rank = same; BrainStem [label = '@@4-1']; Diencep [label = '@@4-2']; Telencep [label = '@@4-3'];
+    Axon [label = '@@4-4']; Dentrite [label = '@@4-5']; Soma [label = '@@4-6'];}
+  {rank = same; Frontal [label = '@@5-1']; Parietal [label = '@@5-2']; Occipital [label = '@@5-3'];
+    Temporal [label = '@@5-4']; Insula [label = '@@5-5']; Signal [label = '@@5-6'];}
+
+  # define graph
+  Anatomy -> {Gross Fine}
+  Gross -> {CNS PNS}
+  Fine -> {Neuron Glial}
+  CNS -> {BrainStem Diencep Telencep}
+  Neuron -> {Axon Dentrite Soma} -> Signal
+  Telencep -> {Frontal Parietal Occipital Temporal Insula}
+  }
+
+  [1]: '神经解剖'
+  [2]: c('大体解剖\n大脑整体结构及其关联的解剖', '精细解剖\n神经元甚至亚细胞结构的解剖')
+  [3]: c('中枢神经系统\n脑和脊髓', '外周神经系统\n躯体神经系统和自主神经系统', '神经元', '胶质细胞')
+  [4]: c('脑干\n延脑，桥脑，小脑和中脑', '间脑\n丘脑和下丘脑', '端脑\n边缘系统，基底神经节和大脑皮层', '轴突', '树突', '胞体')
+  [5]: c('额叶', '顶叶', '枕叶', '颞叶', '脑岛', '神经信号')
